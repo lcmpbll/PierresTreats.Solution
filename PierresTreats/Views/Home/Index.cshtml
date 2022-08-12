@@ -3,17 +3,17 @@
 }
 <br>
 <h1>Pierre's current Treat and Flavor combinations:</h1>
-<table class="table"></table>
+<table class="table">
   <tr>
-    <th>Name</th>&ensp;
-    <th>Description</th>&ensp;
+    <th>Name</th>
+    <th>Description</th>
     <th>Calories</th>
   </tr>
   @foreach (var join in ViewBag.FlavorTreat)
   {
     <tr>
-      <td>@join.Flavor.Name + @join.Treat.Name</td>
-      <td>@join.Flavor.Description + @join.Treat.Description</td>
+      <td>@join.FlavorTreatName</td> 
+      <td>@join.Flavor.Description with @join.Treat.Description</td> 
       <td>@join.Calories</td>
     </tr>
   }
