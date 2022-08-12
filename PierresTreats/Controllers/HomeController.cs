@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using PierresTreats.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
+using System.Linq;
 
 namespace PierresTreats.controller
 {
@@ -20,7 +21,7 @@ namespace PierresTreats.controller
     {
       ViewBag.Title = "Pierre's Sweets and Treats";
       ViewBag.Subtitle = "Savory and Sweet For Any Moment";
-      ViewBag.FlavorTreat = _db.FlavorTreat;
+      ViewBag.FlavorTreat = _db.FlavorTreat.ToList();
       return View();
     }
   }
