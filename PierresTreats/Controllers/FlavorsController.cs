@@ -37,12 +37,9 @@ namespace PierresTreats.Controllers
     }
     
     [HttpPost]
-    public async Task<ActionResult> Create(Flavor flavor, int TreatId)
+    public ActionResult Create(Flavor flavor, int TreatId)
     {
-     
-      var userId =  this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-      var currentUser = await _userManager.FindByIdAsync(userId);
-        flavor.User = currentUser;
+        
         _db.Flavors.Add(flavor);
         _db.SaveChanges();
         if (TreatId != 0 )
@@ -56,7 +53,10 @@ namespace PierresTreats.Controllers
     [AllowAnonymous]
     public ActionResult Details(int id)
     {
-      var thisFlavor = _db.Flavors.FirstOrDefault(flavor => flavor.FlavorId == id);
+      var thisFlavor = _db.Flavors
+        .Include(flavor => flavor.JoinEntities)
+        .ThenInclude(join => join.Treat)
+        .FirstOrDefault(flavor => flavor.FlavorId == id);
       ViewBag.Title ="Flavors";
       ViewBag.Subtitle = thisFlavor.Name;
       return View(thisFlavor);
