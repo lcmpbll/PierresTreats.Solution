@@ -10,7 +10,7 @@
   @if(User.Identity.IsAuthenticated)
   { @await Html.PartialAsync("Header") }
   else
-  { @await Html.PartialAsync("HeaderAccount") }
+  { @await Html.PartialAsync("HeadderAccount") }
   <div class="container">
   @RenderBody()
   </div>
