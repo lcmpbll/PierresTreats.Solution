@@ -10,5 +10,7 @@ namespace PierresTreats.Models
     public virtual Treat Treat { get; set; }
     [NotMapped]
     public int Calories { get { return Flavor.Calories + Treat.Calories;} }
+     [NotMapped]
+    public string FlavorTreatName { get { return Flavor.Name +"y " + Treat.Name;} }
   }
 }
