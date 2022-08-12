@@ -1,0 +1,22 @@
+@{
+  Layout = "_Layout";
+}
+
+@model PierresTreats.Models.Treat
+<br>
+@using (Html.BeginForm())
+{
+  @Html.LabelFor(model => model.Name)
+  @Html.TextBoxFor(model => model.Name)
+  
+  @Html.LabelFor(model => model.Description)
+  @Html.TextBoxFor(model => model.Description)
+  
+  @Html.LabelFor(model => model.Calories)
+  @Html.EditorFor(model => model.Calories)
+  
+  @Html.Label("Select Flavors that go with this Treat:")
+  @Html.DropDownList("FlavorId")
+  
+  <input type="submit" value="Add new Treat" class="btn btn-default"/>
+}
