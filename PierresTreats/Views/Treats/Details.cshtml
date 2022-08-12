@@ -4,6 +4,13 @@
 
 @model PierresTreats.Models.Treat
 <br>
+@if (User.Identity.IsAuthenticated)
+{
+  <button class="btn btn-default">@Html.ActionLink("Edit Treat", "Edit", new { id = Model.TreatId })</button>
+  <button class="btn btn-default">@Html.ActionLink("Delete Treat", "Delete", new { id = Model.TreatId })</button>
+  
+}
+<br>
 @if(@Model.JoinEntities.Count == 0)
 {
   <p>This Treat has not been added to any treats yet.</p>
@@ -23,6 +30,16 @@ else
         <td>@join.FlavorTreatName</td>
         <td>@Html.ActionLink(@join.Flavor.Name, "Details", "Flavors", new { id = join.Treat.TreatId})</td>
         <td>@join.Calories</td>
+        <td>
+          @if (User.Identity.IsAuthenticated)
+          {
+            @using (Html.BeginForm("DeleteTreat", "Flavors"))
+            {
+              @Html.Hidden("joinId", @join.FlavorTreatId)
+              <button type="submit" class="btn btn-danger">Remove Treat Combo</button>
+            }
+          }
+        </td>
       </tr>
     }
   </table>
