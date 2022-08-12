@@ -1,3 +1,5 @@
+using System.Collections.Generic; 
+
 namespace PierresTreats.Models
 {
   public class Treat
@@ -8,6 +10,9 @@ namespace PierresTreats.Models
     }
 
     public int TreatId { get; set; }
+    public int Calories { get; set; }
+    public string Name { get; set; }
+    public string Description { get; set; }
     public virtual ICollection<FlavorTreat> JoinEntites { get; set; }
   }
 }
