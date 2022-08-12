@@ -231,7 +231,7 @@ namespace PierresTreats.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Flavor");
+                    b.ToTable("Flavors");
                 });
 
             modelBuilder.Entity("PierresTreats.Models.FlavorTreat", b =>
@@ -272,7 +272,7 @@ namespace PierresTreats.Migrations
 
                     b.HasKey("TreatId");
 
-                    b.ToTable("Treat");
+                    b.ToTable("Treats");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
