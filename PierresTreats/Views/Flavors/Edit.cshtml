@@ -1,0 +1,21 @@
+@{
+  Layout = "_Layout";
+}
+@model PierresTreats.Models.Flavor
+
+@using (Html.BeginForm())
+{
+  @Html.HiddenFor(model => model.FlavorId)
+
+  @Html.LabelFor(model => model.Name)
+  @Html.EditorFor(model => model.Name)
+  
+  @Html.LabelFor(model => model.Description)
+  @Html.EditorFor(model => model.Description)
+  
+  @Html.LabelFor(model => model.Calories)
+  @Html.EditorFor(model => model.Calories)
+  
+  <input type="submit" value="Save Changes"/>
+
+}
