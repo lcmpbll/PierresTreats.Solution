@@ -1,9 +1,9 @@
 @{
    Layout = "_Layout";
 }
-@* 
+
 @using PierresTreats.ViewModels
-@model Register.ViewModels
+@model RegisterViewModel
 
 @using (Html.BeginForm("Register", "Account", FormMethod.Post))
 {
@@ -14,9 +14,9 @@
   @Html.PasswordFor(user => user.Password)
   
   @Html.LabelFor(user => user.ConfirmPassword)
-  @Html.PasswordFor(user => user.ConformPassword)
+  @Html.PasswordFor(user => user.ConfirmPassword)
   
   <input type="submit" value="Register" />
 }
 
-<p>Already have an account @Html.ActionLink("Log in", "Login")</p> *@
+<p>Already have an account @Html.ActionLink("Log in", "Login")</p>

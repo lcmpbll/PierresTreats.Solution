@@ -2,10 +2,10 @@
   Layout ="_Layout";
 }
 
-@* @using PierresTreats.Models;
-@model IEnumerable<PierresTreats.Models.Flavors>
+@using PierresTreats.Models;
+@model IEnumerable<PierresTreats.Models.Flavor>
   
-@if (model.Any())
+@if (@Model.Any())
 {
   <ul>
     @foreach (Flavor flavor in Model)
@@ -19,6 +19,6 @@ else
   <h3>No Flavors have been added yet!</h3>
 }
 
-<p>@Html.ActionLink("Add new Flavor", "Create")</p> *@
+<p>@Html.ActionLink("Add new Flavor", "Create")</p>
   
   
