@@ -1,0 +1,18 @@
+.login {
+  position: absolute;
+  margin: 4px;
+  top: 0;
+  right: 0;
+}
+
+table {
+  text-transform: uppercase;
+}
+
+label {
+  padding: 3px;
+}
+
+h1 {
+  text-transform: uppercase;
+}
