@@ -1,0 +1,35 @@
+@{
+  Layout = "_Layout";
+}
+
+@model PierresTreats.Models.Flavor
+<br>
+@if(@Model.JoinEntities.Count == 0)
+{
+  <p>This Flavor has not been added to any treats yet.</p>
+}
+else
+{
+  <h2>Treats that have @Model.Name</h2>
+  <table class="table">
+    <tr>
+      <th>Name</th>
+      <th>Treat Name</th>
+      <th>Calories</th>
+    </tr>
+    @foreach(var join in Model.JoinEntities)
+    {
+      <tr>
+        <td>@join.FlavorTreatName</td>
+        <td>@Html.ActionLink(@join.Treat.Name, "Details", "Treat", new { id = join.Treat.TreatId})</td>
+        <td>@join.Calories</td>
+      </tr>
+    }
+  </table>
+  
+}
+<h2>Flavor info:</h2>
+<hr />
+<h3>Description:</h3>@Model.Description
+<br>
+<h3>Calories:</h3>@Model.Calories
