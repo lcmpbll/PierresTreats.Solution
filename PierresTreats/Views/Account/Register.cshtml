@@ -1,9 +1,9 @@
 @{
    Layout = "_Layout";
 }
-
+@* 
 @using PierresTreats.ViewModels
-@model Register.ViewModel
+@model Register.ViewModels
 
 @using (Html.BeginForm("Register", "Account", FormMethod.Post))
 {
@@ -19,4 +19,4 @@
   <input type="submit" value="Register" />
 }
 
-<p>Already have an account @Html.ActionLink("Log in", "Login")</p>
+<p>Already have an account @Html.ActionLink("Log in", "Login")</p> *@
