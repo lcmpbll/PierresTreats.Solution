@@ -1,12 +1,12 @@
 @{
   Layout="_Layout";
 }
-
+<br>
 <h1>Pierre's current Treat and Flavor combinations:</h1>
 <table class="table"></table>
   <tr>
-    <th>Name</th>
-    <th>Description</th>
+    <th>Name</th>&ensp;
+    <th>Description</th>&ensp;
     <th>Calories</th>
   </tr>
   @foreach (var join in ViewBag.FlavorTreat)
@@ -18,3 +18,5 @@
     </tr>
   }
 </table>
+
+
