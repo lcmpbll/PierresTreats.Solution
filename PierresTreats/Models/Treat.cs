@@ -6,13 +6,13 @@ namespace PierresTreats.Models
   {
     public Treat()
     {
-      this.JoinEntites = new HashSet<FlavorTreat>();
+      this.JoinEntities = new HashSet<FlavorTreat>();
     }
 
     public int TreatId { get; set; }
     public int Calories { get; set; }
     public string Name { get; set; }
     public string Description { get; set; }
-    public virtual ICollection<FlavorTreat> JoinEntites { get; set; }
+    public virtual ICollection<FlavorTreat> JoinEntities { get; set; }
   }
 }
