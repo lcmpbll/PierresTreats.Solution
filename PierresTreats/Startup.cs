@@ -26,12 +26,19 @@ namespace PierresTreats
       services.AddMvc();
 
       services.AddEntityFrameworkMySql()
-        .AddDbContext<BestRestaurantsContext>(options => options
+        .AddDbContext<PierresTreatsContext>(options => options
         .UseMySql(Configuration["ConnectionStrings:DefaultConnection"], ServerVersion.AutoDetect(Configuration["ConnectionStrings:DefaultConnection"])));
         
       services.AddIdentity<ApplicationUser, IdentityRole>()
         .AddEntityFrameworkStores<PierresTreatsContext>()
-        .AddTokenProviders();
+        .AddDefaultTokenProviders();
+        
+      // services.AddAuthorization(options => 
+      // {
+      //   options.FallbackPolicy = new AuthorizationPolicyBuilder()
+      //     .RequireAuthenticatedUser()
+      //     .Build();
+      // });
         
       services.Configure<IdentityOptions>(options =>
       {
@@ -49,7 +56,7 @@ namespace PierresTreats
       app.UseDeveloperExceptionPage();
       app.UseAuthentication();
       app.UseRouting();
-      app.UseAthorization();
+      app.UseAuthorization();
 
       app.UseEndpoints(routes =>
       {
