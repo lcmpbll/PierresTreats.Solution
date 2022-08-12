@@ -2,7 +2,19 @@
   Layout="_Layout";
 }
 
-<h1>Welcome to Pierres' Sweets and Treats</h1>
-
-<p class="btn btn-primary">@Html.ActionLink("View all Flavors", "Index", "Flavors")</p>
-<p class="btn btn-primary">@Html.ActionLink("A to an index page", "Index", "Treats")
+<h1>Pierre's current Treat and Flavor combinations:</h1>
+<table class="table"></table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Calories</th>
+  </tr>
+  @foreach (var join in ViewBag.FlavorTreat)
+  {
+    <tr>
+      <td>@join.Flavor.Name + @join.Treat.Name</td>
+      <td>@join.Flavor.Description + @join.Treat.Description</td>
+      <td>@join.Calories</td>
+    </tr>
+  }
+</table>
