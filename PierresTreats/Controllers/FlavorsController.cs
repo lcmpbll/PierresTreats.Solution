@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc;
-using ProjectName.Models;
+using PierresTreats.Models;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Authorization;
@@ -10,14 +10,14 @@ using System.Threading.Tasks;
 using System.Security.Claims;
 
 [Authorize]
-namespace ProjectName.Controllers
+namespace PierresTreats.Controllers
 {
-  public class ClassOneController : Controller
+  public class FlavorController : Controller
   {
-    private readonly ProjectNameContext _db;
+    private readonly PierresTreatsContext _db;
     private readonly UserManager<ApplicationUser> _userManager;
 
-    public ClassOneController(UserManager<ApplicationUser> userManager, ProjectNameContext db)
+    public FlavorController(UserManager<ApplicationUser> userManager, PierresTreatsContext db)
     {
       _userManager = userManager;
       _db = db;
@@ -26,9 +26,9 @@ namespace ProjectName.Controllers
     public ActionResult Index()
     { var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
       var currentUser = await _userManager.FindByIdAsync(userId);
-      var userClassOne = _db.ClassOnes.Where(entry => entry.User.Id == currentUser.Id).ToList();
-      // List<ClassOne> model = _db.ClassOnes.Include(classOne => classOne.ClassTwo).ToList();
-      return View(userClassOne);
+      var userFlavor = _db.Flavors.Where(entry => entry.User.Id == currentUser.Id).ToList();
+      // List<Flavor> model = _db.Flavors.Include(flavor => flavor.Treat).ToList();
+      return View(userFlavor);
     }
     
     public ActionResult Create()
@@ -37,16 +37,16 @@ namespace ProjectName.Controllers
     }
     
     [HttpPost]
-    public async Task<ActionResult> Create(ClassOne classOne, int ClassTwoId)
+    public async Task<ActionResult> Create(Flavor flavor, int TreatId)
     {
       var userId =  this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
       var currentUser = await _userManager.FindByIdAsync(userId);
-        classOne.User = currentUser;
-        _db.ClassOnes.Add(classOne);
+        flavor.User = currentUser;
+        _db.Flavors.Add(flavor);
         _db.SaveChanges();
-        if (ClassTwoId != 0 )
+        if (TreatId != 0 )
         {
-          _db.ClassOneClassTwo.Add(new ClassOneClassTwo() { ClassTwoId = ClassTwoId, ClassOneId = classOne.ClassOneId });
+          _db.FlavorTreat.Add(new FlavorTreat() { TreatId = TreatId, FlavorId = flavor.FlavorId });
         }
         _db.SaveChanges();
         return RedirectToAction("Index");

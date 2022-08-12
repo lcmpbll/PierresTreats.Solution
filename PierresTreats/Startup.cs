@@ -4,10 +4,10 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using ProjectName.Models;
+using PierresTreats.Models;
 using Microsoft.AspNetCore.Identity;
 
-namespace ProjectName
+namespace PierresTreats
 {
   public class Startup
   {
@@ -30,7 +30,7 @@ namespace ProjectName
         .UseMySql(Configuration["ConnectionStrings:DefaultConnection"], ServerVersion.AutoDetect(Configuration["ConnectionStrings:DefaultConnection"])));
         
       services.AddIdentity<ApplicationUser, IdentityRole>()
-        .AddEntityFrameworkStores<ProjectNameContext>()
+        .AddEntityFrameworkStores<PierresTreatsContext>()
         .AddTokenProviders();
         
       services.Configure<IdentityOptions>(options =>

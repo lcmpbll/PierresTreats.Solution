@@ -1,4 +1,4 @@
-# _Project Name_
+# _Pierre's Treats_
 
 #### By _Liam Campbell_
 
@@ -27,7 +27,7 @@
 ---
 ## Description
 
-_This is an MVC application that was built using C#. The purpose of this application is to allow the user to identify the best restaurants by their cuisine. When the application runs, the user can add a cuisine type. After the type is inputted using the "add" button, users can then add specific restaurants to that specific cuisine. The restaurant details support a name and description. Once the restaurant is added, it will appear under that specific cuisine list._
+
 
 ---
 ## Setup and Installation Requirements
@@ -35,11 +35,11 @@ _This is an MVC application that was built using C#. The purpose of this applica
 <details>
 <summary><strong>Initial Setup</strong></summary>
 <ol>
-<li>Copy the git repository url: https://github.com/lcmpbll/ProjectName
+<li>Copy the git repository url: https://github.com/lcmpbll/PierresTreats
 <li>Open a shell program and navigate to your desktop.
 <li>Clone the repository for this project using the "git clone" command and including the copied URL.
-<li>While still in the shell program, navigate to the root directory of the newly created file named "ProjectName.Solution".
-<li>From the root directory, navigate to the "BestRestuarants" directory.
+<li>While still in the shell program, navigate to the root directory of the newly created file named "PierresTreats.Solution".
+<li>From the root directory, navigate to the "PierresTreats" directory.
 <li>Move onto "SQL Workbench" instructions below to re-create database necessary to run this project.
 <br>
 </details>
@@ -47,9 +47,9 @@ _This is an MVC application that was built using C#. The purpose of this applica
 <details>
 <summary><strong>SQL Workbench Configuration</strong></summary>
 <ol>
-<li>Create an appsetting.json file in the "ProjectName" directory of the project*  
-   <pre>ProjectName.Solution
-   └── ProjectName
+<li>Create an appsetting.json file in the "PierresTreats" directory of the project*  
+   <pre>PierresTreats.Solution
+   └── PierresTreats
     └── appsetting.json</pre>
 <li> Insert the following code** : <br>
 
@@ -69,8 +69,8 @@ _This is an MVC application that was built using C#. The purpose of this applica
 <details>
 <summary><strong>To Run</strong></summary>
 Navigate to:  
-   <pre>ProjectName.Solution
-   └── <strong>ProjectName</strong></pre>
+   <pre>PierresTreats.Solution
+   └── <strong>PierresTreats</strong></pre>
 
 Run `$ dotnet restore` in the console.<br>
 Run `$ dotnet database update` in the console.<br>
@@ -81,9 +81,9 @@ Run `$ dotnet run` in the console
 <details>
 <summary><strong>For Testing</strong></summary>
 Navigate to  
-    <pre>ProjectName.Solution
-    ├── ProjectName
-    └── <strong>ProjectName.Tests</strong></pre>
+    <pre>PierresTreats.Solution
+    ├── PierresTreats
+    └── <strong>PierresTreats.Tests</strong></pre>
 
 Run `$ dotnet test` in the console
 

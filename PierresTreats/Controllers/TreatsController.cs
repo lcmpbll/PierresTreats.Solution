@@ -1,24 +1,24 @@
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
-using ProjectName.Models;
+using PierresTreats.Models;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ProjectName.Controllers
+namespace PierresTreats.Controllers
 {
-  public class ClassTwoController : Controller
+  public class TreatController : Controller
   {
-    private readonly ProjectNameContext _db;
+    private readonly PierresTreatsContext _db;
 
-    public CuisineController(ProjectNameContext db)
+    public CuisineController(PierresTreatsContext db)
     {
       _db = db;
     }
 
     public ActionResult Index()
     {
-      List<ClassTwo> model = _db.ClassTwo.ToList();
+      List<Treat> model = _db.Treat.ToList();
       return View(model);
     }
   }
