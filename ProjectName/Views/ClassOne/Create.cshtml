@@ -1,0 +1,16 @@
+@{
+  Layout = "_Layout";
+}
+
+@model ProjectName.Models.ClassOne
+
+@using (Html.BeginForm())
+{
+  @Html.LabelFor(model => model.Description)
+  @Html.TextBoxFor(model => model.Description)
+  
+  @Html.Label("Select ClassTwo")
+  @Html.DropDownList("ClassTwoId")
+  
+  <input type="submit" value="Add new classOne" class="btn btn-default"/>
+}
