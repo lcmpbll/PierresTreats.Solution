@@ -1,3 +1,4 @@
+using System.ComponentModel.DataAnnotations.Schema;
 namespace PierresTreats.Models
 {
   public class FlavorTreat
@@ -7,5 +8,7 @@ namespace PierresTreats.Models
     public int TreatId { get; set; }
     public virtual Flavor Flavor { get; set; }
     public virtual Treat Treat { get; set; }
+    [NotMapped]
+    public int Calories { get { return Flavor.Calories + Treat.Calories;} }
   }
 }
