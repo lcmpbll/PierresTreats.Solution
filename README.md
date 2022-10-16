@@ -27,7 +27,7 @@ _Microsoft Identity_
 
 ---
 ## Description
-_This is a web application which can be used to add different and display different flavor-treat combinations. The information for each treat and flavor are stored in a database. Name, description, and calorie information can be entered for both. When a flavor is added to a treat the calories are added together and total calories are displayed when viewing that particular combination. The names are also added together as well as the descriptions. A Vanilla flavor added to a croissant becomes a vanillay croissant and the descriptions are combined flavor first, then treat compounded by "with". An authenticated user has full functionality and can create, update, delete as well as read both flavors and treats, while an unauthenticated user may only read. 
+_This is a web application which can be used to add different and display different flavor-treat combinations. The information for each treat and flavor are stored in a database. Name, description, and calorie information can be entered for both. When a flavor is added to a treat the calories are added together and total calories are displayed when viewing that particular combination. The names are also added together as well as the descriptions. A Vanilla flavor added to a croissant becomes a vanillay croissant and the descriptions are combined flavor first, then treat compounded by "with". An authenticated user has full functionality and can create, update, delete as well as read both flavors and treats, while an unauthenticated user may only read._ 
 
 
 ---
