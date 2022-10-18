@@ -2,7 +2,7 @@
 
 #### By _Liam Campbell_
 
-
+![Pierre's Treats Demo.](appdemo.png)
 
 #### _A C# database web app to display current treat and flavor combinations for Pierre's_
 

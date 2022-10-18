@@ -5,6 +5,20 @@
   right: 0;
 }
 
+body {
+  
+  text-decoration: none;
+  background-color: rgba(37, 128, 85, 0.851);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: black;
+}
+
 table {
   text-transform: uppercase;
 }
@@ -15,7 +29,12 @@ label {
 
 h1 {
   text-transform: uppercase;
+  
 }
 
+.jumbotron {
+  
+  background-image: url("../img/background.jpeg");
+}
 
 
